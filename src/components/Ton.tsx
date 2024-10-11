@@ -1,5 +1,9 @@
 import { Avatar, Cell, Section, Title } from "@telegram-apps/telegram-ui";
-import { TonConnectButton, useTonAddress, useTonWallet } from "@tonconnect/ui-react";
+import {
+  TonConnectButton,
+  useTonAddress,
+  useTonWallet,
+} from "@tonconnect/ui-react";
 
 import { Debug } from "./Debug";
 
@@ -35,7 +39,9 @@ export function Ton() {
           <Title level="3">{wallet.name}</Title>
         </Cell>
       )}
-      <Debug className="p-6" value={{...wallet, friendlyAddress }} />
+      <div className="p-6">
+        <Debug value={{ ...wallet, friendlyAddress }} />
+      </div>
     </Section>
   );
 }
