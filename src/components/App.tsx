@@ -12,7 +12,7 @@ const manifestUrl = new URL(
   window.location.origin,
 ).toString();
 
-// TODO BackButton, MainButton, closingConfirmation, sendData, deploy to gh-pages
+// TODO BackButton, MainButton, closingConfirmation, sendData, README
 
 export function App() {
   const platform = ["macos", "ios"].includes(WebApp.platform) ? "ios" : "base";
