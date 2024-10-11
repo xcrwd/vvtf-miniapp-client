@@ -10,7 +10,7 @@ export function Ton() {
   if (!wallet) {
     return (
       <Section header="TON Connect">
-        <div className="p-20">
+        <div className="p-6">
           <TonConnectButton />
         </div>
       </Section>
@@ -35,7 +35,7 @@ export function Ton() {
           <Title level="3">{wallet.name}</Title>
         </Cell>
       )}
-      <Debug className="p-20" value={{...wallet, friendlyAddress }} />
+      <Debug className="p-6" value={{...wallet, friendlyAddress }} />
     </Section>
   );
 }

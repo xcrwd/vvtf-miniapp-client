@@ -12,7 +12,7 @@ const manifestUrl = new URL(
   window.location.origin,
 ).toString();
 
-// TODO back/exit, onExit, tailwind, app button in bot menu, app MainButton, sendData from app to bot, deploy to gh-pages
+// TODO BackButton, MainButton, closingConfirmation, sendData, deploy to gh-pages
 
 export function App() {
   const platform = ["macos", "ios"].includes(WebApp.platform) ? "ios" : "base";
@@ -21,7 +21,7 @@ export function App() {
     <ErrorBoundary fallback={ErrorFallback}>
       <TonConnectUIProvider manifestUrl={manifestUrl}>
         <AppRoot appearance={WebApp.colorScheme} platform={platform}>
-          <List className="p-20">
+          <List className="p-8">
             <Ton />
             <AppInfo />
           </List>

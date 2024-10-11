@@ -13,7 +13,7 @@ export function AppInfo() {
 
   return (
     <Section header="App Info">
-      <Debug className="p-20" value={info} />
+      <Debug className="p-6" value={info} />
     </Section>
   );
 }
