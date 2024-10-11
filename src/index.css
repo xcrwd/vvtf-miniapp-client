@@ -1,5 +1,41 @@
+/* TODO use --tgui--[any]_color */
+:root {
+  --bg-color: var(--tg-theme-bg-color, #ffffff);
+  --text-color: var(--tg-theme-text-color, #222222);
+  --hint-color: var(--tg-theme-hint-color, #a8a8a8);
+  --link-color: var(--tg-theme-link-color, #2678b6);
+  --button-color: var(--tg-theme-button-color, #50a8eb);
+  --button-text-color: var(--tg-theme-button-text-color, #ffffff);
+
+  /* v6.1 */
+  --secondary-bg-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+
+  /* v7.0 */
+  --header-bg-color: var(--tg-theme-header-bg-color, #527da3);
+  --accent-text-color: var(--tg-theme-accent-text-color, #1c93e3);
+  --section-bg-color: var(--tg-theme-section-bg-color, #ffffff);
+  --section-header-text-color: var(
+    --tg-theme-section-header-text-color,
+    #3a95d5
+  );
+  --subtitle-text-color: var(--tg-theme-subtitle-text-color, #82868a);
+  --destructive-text-color: var(--tg-theme-destructive-text-color, #cc2929);
+
+  /* v.7.6 */
+  --section-separator-color: var(--tg-theme-section-separator-color, #d9d9d9);
+
+  /* v.7.10 */
+  --bottom-bar-bg-color: var(--tg-theme-bottom-bar-bg-color, #f0f0f0);
+}
+
 body {
-  background: var(--tg-theme-secondary-bg-color, #fff);
+  background: var(--secondary-bg-color);
+  color: var(--text-color);
   padding: 0;
   margin: 0;
+}
+
+/* TODO add tailwind */
+.p-20 {
+  padding: 20px;
 }

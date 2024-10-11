@@ -1,7 +1,9 @@
 import { createRoot } from "react-dom/client";
 
-import { App } from "./App.tsx";
+import "@telegram-apps/telegram-ui/dist/styles.css";
 import "./index.css";
+
+import { App } from "./components/App";
 
 const rootElem = document.getElementById("root");
 
