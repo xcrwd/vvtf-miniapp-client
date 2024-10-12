@@ -3,6 +3,7 @@ import { Account, TonProofItemReplySuccess } from "@tonconnect/ui-react";
 import env from "./env";
 import type { KeyValue } from "./types";
 import { sha256 } from "./utils";
+import WebApp from "@twa-dev/sdk";
 
 export async function checkProof(
   form: KeyValue,
@@ -20,6 +21,7 @@ export async function checkProof(
       address: account.address,
       publicKey: account.publicKey,
     },
+    tgAccount: WebApp.initDataUnsafe.user?.username,
   };
 
   const res = await fetch(url, {
@@ -29,7 +31,6 @@ export async function checkProof(
   });
 
   if (!res.ok) throw new Error(res.statusText);
-  return true;
 }
 
 export async function proofPayload(form: KeyValue) {

@@ -2,14 +2,14 @@ import WebApp from "@twa-dev/sdk";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 
-import { getManifestUrl, getQueryParams } from "../common/utils";
+import { getPublicUrl, getQueryParams } from "../common/utils";
 
 import { ErrorBoundary } from "./ErrorBoundary";
 import { ErrorFallback } from "./ErrorFallback";
 import { VTForm } from "./VTForm";
 
 export function App() {
-  const manifestUrl = getManifestUrl();
+  const manifestUrl = getPublicUrl("tonconnect-manifest.json");
   const platform = ["macos", "ios"].includes(WebApp.platform) ? "ios" : "base";
   const startapp = getQueryParams().get("startapp") || "";
 

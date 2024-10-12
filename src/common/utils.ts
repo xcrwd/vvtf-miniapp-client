@@ -2,12 +2,8 @@ export function getQueryParams() {
   return new URLSearchParams(window.location.search);
 }
 
-export function getManifestUrl() {
-  return new URL("tonconnect-manifest.json", window.location.origin).toString();
-}
-
 export function getPublicUrl(url: string) {
-  return new URL(url, window.location.origin).toString();
+  return new URL(url, window.location.href).toString();
 }
 
 export function fromIterable<K, V>(iterable: Iterable<[K, V]>) {

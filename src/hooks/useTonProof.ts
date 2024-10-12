@@ -46,7 +46,7 @@ export function useTonProof(form: KeyValue) {
     }
 
     checkProof(form, tonProof, wallet.account).catch((err) => {
-      alert(err.message || "Invalid TON proof");
+      alert(err.message || "Invalid Ton proof");
       tonConnectUI.disconnect();
     });
   }, [form, wallet, isConnectionRestored, tonConnectUI]);
