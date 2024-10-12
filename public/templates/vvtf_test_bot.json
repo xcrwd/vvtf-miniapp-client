@@ -1,0 +1,27 @@
+{
+  "id": "vvtf_test_bot",
+  "title": "Crypto Bootcamp 2024",
+  "subtitle": "Whatsup noobs?",
+  "form": [
+    {
+      "type": "option",
+      "key": "rating",
+      "title": "Rate the bootcamp",
+      "required": true,
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "type": "text",
+      "key": "comment",
+      "title": "Your thoughts",
+      "subtitle": "Express yourself!",
+      "lines": 4
+    }
+  ]
+}
