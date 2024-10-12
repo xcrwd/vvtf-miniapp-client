@@ -1,0 +1,25 @@
+{
+  "id": "bootcamp",
+  "title": "Tbilisi Bootcamp 2024",
+  "subtitle": "Hackers League Hackathon",
+  "form": [
+    {
+      "key": "Feedback",
+      "title": "How do you like the hackathon?",
+      "type": "text",
+      "placeholder": "Your feedback",
+      "lines": 3
+    },
+    {
+      "key": "Rating",
+      "title": "Your rating",
+      "type": "option",
+      "required": true,
+      "options": [
+        "Great",
+        "Fine",
+        "Not good"
+      ]
+    }
+  ]
+}

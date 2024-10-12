@@ -1,6 +1,6 @@
 import { ReactNode, useCallback } from "react";
 
-import { Title } from "@telegram-apps/telegram-ui";
+import { Title, Text, List } from "@telegram-apps/telegram-ui";
 
 import type { InputProps, TemplateField } from "../../common/types";
 import { useFormInstance } from "./useForm";
@@ -25,10 +25,16 @@ export function FormItem<T extends TemplateField>({
     [field, form],
   );
 
+  const star = field.required ? "*" : "";
+
   return (
-    <div>
-      <Title level="3">{field.title}</Title>
+    <List>
+      <Title level="3">
+        {field.title}
+        {star}
+      </Title>
+      {field.subtitle && <Text className="pt-2 text-tg-subtitle">{field.subtitle}</Text>}
       {children({ value: itemValue, onChange: onItemChange })}
-    </div>
+    </List>
   );
 }

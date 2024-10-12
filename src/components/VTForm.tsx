@@ -1,13 +1,14 @@
 import { Avatar, Cell, List, Section, Title } from "@telegram-apps/telegram-ui";
+import { TonConnectButton } from "@tonconnect/ui-react";
 
 import { getPublicUrl } from "../common/utils";
 import { useFetch } from "../hooks/useFetch";
+import { useTonProof } from "../hooks/useTonProof";
 import type { Template } from "../common/types";
 
-import { Ton } from "./Ton";
-import { VTField } from "./VTField";
 import { useForm } from "./form/useForm";
 import { Form } from "./form/Form";
+import { VTField } from "./VTField";
 
 type VTFormProps = {
   appId: string;
@@ -19,6 +20,8 @@ export function VTForm({ appId }: VTFormProps) {
   const { data, loading, error } = useFetch<Template>(url);
 
   const form = useForm();
+
+  useTonProof(form.values);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -44,9 +47,9 @@ export function VTForm({ appId }: VTFormProps) {
           </List>
         </Form>
       </Section>
-      <Section>
-        <Ton />
-      </Section>
+      <div className="flex justify-center">
+        <TonConnectButton />
+      </div>
     </List>
   );
 }

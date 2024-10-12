@@ -37,3 +37,12 @@ export function toArray<T>(value?: T | T[]): T[] {
   if (Array.isArray(value)) return value;
   return value === undefined ? [] : [value];
 }
+
+export async function sha256(message: string) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(message);
+  const digest = await window.crypto.subtle.digest("SHA-256", data);
+  const bytes = Array.from(new Uint8Array(digest));
+  const hex = bytes.map((b) => b.toString(16).padStart(2, "0")).join("");
+  return hex;
+}
