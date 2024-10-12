@@ -1,9 +1,9 @@
+import WebApp from "@twa-dev/sdk";
 import { Account, TonProofItemReplySuccess } from "@tonconnect/ui-react";
 
 import env from "./env";
 import type { KeyValue } from "./types";
 import { sha256 } from "./utils";
-import WebApp from "@twa-dev/sdk";
 
 export async function checkProof(
   form: KeyValue,
