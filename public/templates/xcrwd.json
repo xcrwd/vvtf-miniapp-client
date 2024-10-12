@@ -13,7 +13,7 @@
     },
     {
       "key": "Ethereum",
-      "title": "Ethereum wallet address*",
+      "title": "Ethereum wallet address",
       "subtitle": "To connect to our platform, please provide your Ethereum wallet address. We use Sign-In with Ethereum (SIWE, ERC-4361) for authentication. If you don’t have a wallet yet, we recommend creating one using the MetaMask extension or the 1inch mobile wallet.",
       "type": "text",
       "required": true

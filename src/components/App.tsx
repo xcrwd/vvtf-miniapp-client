@@ -13,6 +13,9 @@ export function App() {
   const platform = ["macos", "ios"].includes(WebApp.platform) ? "ios" : "base";
   const startapp = getQueryParams().get("startapp") || "not-exists";
 
+  WebApp.MainButton.text = "Bye!"
+  WebApp.MainButton.onClick(() => WebApp.close());
+
   return (
     <ErrorBoundary fallback={ErrorFallback}>
       <TonConnectUIProvider manifestUrl={manifestUrl}>

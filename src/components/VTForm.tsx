@@ -1,3 +1,4 @@
+import WebApp from "@twa-dev/sdk";
 import { Button, List, Section } from "@telegram-apps/telegram-ui";
 import { useTonConnectUI } from "@tonconnect/ui-react";
 
@@ -27,6 +28,8 @@ export function VTForm({ appId }: VTFormProps) {
 
   const done = useTonProof(form.values, data?.apiUrl);
 
+  WebApp.MainButton.isVisible = done;
+
   if (loading) {
     return (
       <div className="h-screen">
@@ -36,6 +39,20 @@ export function VTForm({ appId }: VTFormProps) {
   }
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
+
+  if (done) {
+    return (
+      <Section>
+        <List className="p-4 text-center">
+          <img src="success.png" />
+          <div className="text-xl font-semibold">Congratulations!</div>
+          <div className="text-tg-subtitle">
+            Your request was sent successfully!
+          </div>
+        </List>
+      </Section>
+    );
+  }
 
   const isValid = validateForm(form.values, data.form);
 
@@ -60,31 +77,25 @@ export function VTForm({ appId }: VTFormProps) {
           )}
         </List>
       </Section>
-      {done ? (
-        <Section className="p-4">Success</Section>
-      ) : (
-        <>
-          <Section>
-            <Form instance={form}>
-              <List className="p-6">
-                {data.form.map((field) => (
-                  <VTField key={field.key} field={field} />
-                ))}
-              </List>
-            </Form>
-          </Section>
-          <div className="m-4">
-            <Button
-              size="l"
-              stretched
-              disabled={!isValid}
-              onClick={() => tonConnectUI.openModal()}
-            >
-              Submit
-            </Button>
-          </div>
-        </>
-      )}
+      <Section>
+        <Form instance={form}>
+          <List className="p-6">
+            {data.form.map((field) => (
+              <VTField key={field.key} field={field} />
+            ))}
+          </List>
+        </Form>
+      </Section>
+      <section className="m-4">
+        <Button
+          size="l"
+          stretched
+          disabled={!isValid}
+          onClick={() => tonConnectUI.openModal()}
+        >
+          Submit
+        </Button>
+      </section>
     </List>
   );
 }
