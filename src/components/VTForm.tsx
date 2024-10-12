@@ -1,11 +1,8 @@
-import {
-  Button,
-  List,
-  Section,
-} from "@telegram-apps/telegram-ui";
+import { Button, List, Section } from "@telegram-apps/telegram-ui";
 import { useTonConnectUI } from "@tonconnect/ui-react";
 
 import { getPublicUrl } from "../common/utils";
+import { validateForm } from "../common/form";
 import { useFetch } from "../hooks/useFetch";
 import { useTonProof } from "../hooks/useTonProof";
 import type { Template } from "../common/types";
@@ -13,7 +10,7 @@ import type { Template } from "../common/types";
 import { useForm } from "./form/useForm";
 import { Form } from "./form/Form";
 import { VTField } from "./VTField";
-import { validateForm } from "../common/form";
+import { Loader } from "./Loader";
 
 type VTFormProps = {
   appId: string;
@@ -30,7 +27,7 @@ export function VTForm({ appId }: VTFormProps) {
 
   const done = useTonProof(form.values, data?.apiUrl);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
 
@@ -45,8 +42,16 @@ export function VTForm({ appId }: VTFormProps) {
               <img src={data.imageUrl} />
             </div>
           )}
-          {data.title && <div className="font-tg-sans font-semibold text-xl">{data.title}</div>}
-          {data.subtitle && <div className="font-tg-sans text-tg-subtitle whitespace-pre-line">{data.subtitle}</div>}
+          {data.title && (
+            <div className="font-tg-sans font-semibold text-xl">
+              {data.title}
+            </div>
+          )}
+          {data.subtitle && (
+            <div className="font-tg-sans text-tg-subtitle whitespace-pre-line">
+              {data.subtitle}
+            </div>
+          )}
         </List>
       </Section>
       {done ? (
@@ -62,14 +67,16 @@ export function VTForm({ appId }: VTFormProps) {
               </List>
             </Form>
           </Section>
-          <Button
-            size="m"
-            stretched
-            disabled={!isValid}
-            onClick={() => tonConnectUI.openModal()}
-          >
-            Submit
-          </Button>
+          <div className="m-4">
+            <Button
+              size="l"
+              stretched
+              disabled={!isValid}
+              onClick={() => tonConnectUI.openModal()}
+            >
+              Submit
+            </Button>
+          </div>
         </>
       )}
     </List>
