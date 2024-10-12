@@ -1,7 +1,7 @@
 {
   "id": "bootcamp",
   "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/bootcamp.png",
-  "apiUrl": "http://65.109.142.184",
+  "apiUrl": "https://hardy-tops-arachnid.ngrok-free.app",
   "form": [
     {
       "key": "Feedback",

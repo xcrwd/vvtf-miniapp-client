@@ -27,7 +27,13 @@ export function VTForm({ appId }: VTFormProps) {
 
   const done = useTonProof(form.values, data?.apiUrl);
 
-  if (loading) return <Loader />;
+  if (loading) {
+    return (
+      <div className="h-screen">
+        <Loader />
+      </div>
+    );
+  }
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
 
