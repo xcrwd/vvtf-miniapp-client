@@ -6,8 +6,8 @@ export type Empty = undefined | null | "" | [];
 
 export type Template = {
   id: string;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   imageUrl?: string;
   form: TemplateField[];
 };

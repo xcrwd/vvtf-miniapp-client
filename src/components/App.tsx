@@ -16,11 +16,7 @@ export function App() {
   return (
     <ErrorBoundary fallback={ErrorFallback}>
       <TonConnectUIProvider manifestUrl={manifestUrl}>
-        <AppRoot
-          className="p-6"
-          appearance={WebApp.colorScheme}
-          platform={platform}
-        >
+        <AppRoot appearance={WebApp.colorScheme} platform={platform}>
           <VTForm appId={startapp} />
         </AppRoot>
       </TonConnectUIProvider>

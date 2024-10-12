@@ -1,7 +1,6 @@
 {
   "id": "bootcamp",
-  "title": "Tbilisi Bootcamp 2024",
-  "subtitle": "Hackers League Hackathon",
+  "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/bootcamp.png",
   "form": [
     {
       "key": "Feedback",

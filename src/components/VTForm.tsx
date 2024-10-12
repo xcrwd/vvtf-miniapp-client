@@ -1,10 +1,10 @@
 import {
-  Avatar,
   Button,
   Cell,
   List,
   Section,
   Title,
+  Image,
 } from "@telegram-apps/telegram-ui";
 import { useTonConnectUI } from "@tonconnect/ui-react";
 
@@ -39,16 +39,18 @@ export function VTForm({ appId }: VTFormProps) {
 
   const isValid = validateForm(form.values, data.form);
 
-  const logo = data.imageUrl ? (
-    <Avatar src={data.imageUrl} alt="Org logo" width={60} height={60} />
-  ) : undefined;
-
   return (
     <List>
       <Section>
-        <Cell subtitle={data.subtitle} before={logo}>
-          <Title level="1">{data.title}</Title>
-        </Cell>
+        <List className="p-4">
+          {data.imageUrl && (
+            <div className="flex justify-center">
+              <img src={data.imageUrl} />
+            </div>
+          )}
+          {data.title && <div className="font-tg-sans font-semibold text-xl">{data.title}</div>}
+          {data.subtitle && <div className="font-tg-sans text-tg-subtitle whitespace-pre-line">{data.subtitle}</div>}
+        </List>
       </Section>
       {done ? (
         <Section>Success</Section>
@@ -63,14 +65,14 @@ export function VTForm({ appId }: VTFormProps) {
               </List>
             </Form>
           </Section>
-            <Button
-              size="m"
-              stretched
-              disabled={!isValid}
-              onClick={() => tonConnectUI.openModal()}
-            >
-              Submit
-            </Button>
+          <Button
+            size="m"
+            stretched
+            disabled={!isValid}
+            onClick={() => tonConnectUI.openModal()}
+          >
+            Submit
+          </Button>
         </>
       )}
     </List>
