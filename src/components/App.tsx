@@ -11,7 +11,7 @@ import { VTForm } from "./VTForm";
 export function App() {
   const manifestUrl = getPublicUrl("tonconnect-manifest.json");
   const platform = ["macos", "ios"].includes(WebApp.platform) ? "ios" : "base";
-  const startapp = getQueryParams().get("startapp") || "";
+  const startapp = getQueryParams().get("startapp") || "not-exists";
 
   return (
     <ErrorBoundary fallback={ErrorFallback}>

@@ -6,7 +6,13 @@ import { InputText } from "../inputs/InputText";
 export function FieldText({ field }: FieldProps<TextField>) {
   return (
     <FormItem field={field}>
-      {(input) => <InputText value={input.value} onChange={input.onChange} />}
+      {(input) => (
+        <InputText
+          value={input.value}
+          onChange={input.onChange}
+          valid={input.valid}
+        />
+      )}
     </FormItem>
   );
 }

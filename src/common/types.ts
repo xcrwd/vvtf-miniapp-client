@@ -2,6 +2,8 @@ import type { FC } from "react";
 
 export type KeyValue<T = unknown> = Record<string, T>;
 
+export type Empty = undefined | null | "" | [];
+
 export type Template = {
   id: string;
   title: string;
@@ -63,4 +65,5 @@ export type FieldComponentMap = {
 export type InputProps<T> = {
   value?: T;
   onChange: (value?: T) => void;
+  valid: boolean;
 };

@@ -21,7 +21,7 @@ export async function checkProof(
       address: account.address,
       publicKey: account.publicKey,
     },
-    tgAccount: WebApp.initDataUnsafe.user?.username,
+    tgAccount: WebApp.initDataUnsafe.user,
   };
 
   const res = await fetch(url, {

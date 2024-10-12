@@ -1,3 +1,5 @@
+import { Empty } from "./types";
+
 export function getQueryParams() {
   return new URLSearchParams(window.location.search);
 }
@@ -12,6 +14,15 @@ export function fromIterable<K, V>(iterable: Iterable<[K, V]>) {
     kv[String(k)] = v;
   }
   return kv;
+}
+
+export function isEmpty(value: unknown): value is Empty {
+  return (
+    value === undefined ||
+    value === null ||
+    value === "" ||
+    (Array.isArray(value) && !value.length)
+  );
 }
 
 export function arrayToggleValue<T>(arr: T[], value: T, present: boolean) {

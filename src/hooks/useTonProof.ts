@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   useIsConnectionRestored,
   useTonConnectUI,
@@ -12,6 +12,7 @@ export function useTonProof(form: KeyValue) {
   const isConnectionRestored = useIsConnectionRestored();
   const wallet = useTonWallet();
   const [tonConnectUI] = useTonConnectUI();
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (!isConnectionRestored) return;
@@ -45,9 +46,15 @@ export function useTonProof(form: KeyValue) {
       return;
     }
 
-    checkProof(form, tonProof, wallet.account).catch((err) => {
-      alert(err.message || "Invalid Ton proof");
-      tonConnectUI.disconnect();
-    });
+    checkProof(form, tonProof, wallet.account)
+      .then(() => {
+        setDone(true);
+      })
+      .catch((err) => {
+        alert(err.message || "Invalid Ton proof");
+        tonConnectUI.disconnect();
+      });
   }, [form, wallet, isConnectionRestored, tonConnectUI]);
+
+  return done;
 }

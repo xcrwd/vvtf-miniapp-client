@@ -12,6 +12,7 @@ export function FieldOption({ field }: FieldProps<OptionField>) {
           options={field.options}
           value={input.value}
           onChange={input.onChange}
+          valid={input.valid}
         />
       )}
     </FormItem>

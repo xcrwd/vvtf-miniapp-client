@@ -11,6 +11,7 @@ type InputTextProps = InputProps<string> & {
 export function InputText({
   header,
   placeholder,
+  valid,
   value,
   onChange,
 }: InputTextProps) {
@@ -21,6 +22,7 @@ export function InputText({
 
   return (
     <Input
+      status={valid ? undefined : "error"}
       header={header}
       placeholder={placeholder}
       value={value || ""}
