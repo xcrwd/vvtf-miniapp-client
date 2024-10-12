@@ -10,6 +10,9 @@ export type Template = {
   subtitle?: string;
   imageUrl?: string;
   form: TemplateField[];
+
+  // temporary
+  apiUrl?: string;
 };
 
 export type TemplateField = TextField | OptionField;

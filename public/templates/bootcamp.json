@@ -1,6 +1,7 @@
 {
   "id": "bootcamp",
   "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/bootcamp.png",
+  "apiUrl": "https://65.109.142.184",
   "form": [
     {
       "key": "Feedback",

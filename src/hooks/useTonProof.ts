@@ -8,7 +8,7 @@ import {
 import { checkProof, proofPayload } from "../common/tonProof";
 import type { KeyValue } from "../common/types";
 
-export function useTonProof(form: KeyValue) {
+export function useTonProof(form: KeyValue, apiUrl?: string) {
   const isConnectionRestored = useIsConnectionRestored();
   const wallet = useTonWallet();
   const [tonConnectUI] = useTonConnectUI();
@@ -46,7 +46,7 @@ export function useTonProof(form: KeyValue) {
       return;
     }
 
-    checkProof(form, tonProof, wallet.account)
+    checkProof(form, tonProof, wallet.account, apiUrl)
       .then(() => {
         setDone(true);
       })
@@ -54,7 +54,7 @@ export function useTonProof(form: KeyValue) {
         alert(err.message || "Invalid Ton proof");
         tonConnectUI.disconnect();
       });
-  }, [form, wallet, isConnectionRestored, tonConnectUI]);
+  }, [form, apiUrl, wallet, isConnectionRestored, tonConnectUI]);
 
   return done;
 }

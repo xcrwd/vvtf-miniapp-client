@@ -9,8 +9,9 @@ export async function checkProof(
   form: KeyValue,
   reply: TonProofItemReplySuccess,
   account: Account,
+  apiUrl?: string,
 ) {
-  const url = `${env.BACKEND_URL}/api/form`;
+  const url = `${apiUrl || env.API_URL}/api/form`;
 
   const payload = {
     form,

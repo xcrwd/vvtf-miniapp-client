@@ -1,10 +1,7 @@
 import {
   Button,
-  Cell,
   List,
   Section,
-  Title,
-  Image,
 } from "@telegram-apps/telegram-ui";
 import { useTonConnectUI } from "@tonconnect/ui-react";
 
@@ -31,7 +28,7 @@ export function VTForm({ appId }: VTFormProps) {
 
   const form = useForm();
 
-  const done = useTonProof(form.values);
+  const done = useTonProof(form.values, data?.apiUrl);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -53,7 +50,7 @@ export function VTForm({ appId }: VTFormProps) {
         </List>
       </Section>
       {done ? (
-        <Section>Success</Section>
+        <Section className="p-4">Success</Section>
       ) : (
         <>
           <Section>
