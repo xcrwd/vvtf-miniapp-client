@@ -64,7 +64,7 @@ export function VTForm({ appId }: VTFormProps) {
         <List className="p-4">
           {data.imageUrl && (
             <div className="text-center">
-              <img src={data.imageUrl} />
+              <img className="object-contain max-w-full" src={data.imageUrl} />
             </div>
           )}
           {data.title && (
