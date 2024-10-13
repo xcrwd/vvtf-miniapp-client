@@ -12,23 +12,24 @@
       "required": true
     },
     {
-      "key": "Ethereum",
+      "key": "Ethereum wallet",
       "title": "Ethereum wallet address",
       "subtitle": "To connect to our platform, please provide your Ethereum wallet address. We use Sign-In with Ethereum (SIWE, ERC-4361) for authentication. If you don’t have a wallet yet, we recommend creating one using the MetaMask extension or the 1inch mobile wallet.",
       "type": "text",
-      "required": true
+      "required": true,
+      "placeholder": "0xb794f5ea0ba39494ce839613fffba74279579268"
     },
     {
-      "key": "Specialisation",
-      "title": "Your specialisation",
+      "key": "Specialization",
+      "title": "Your specialization",
       "type": "option",
       "required": true,
       "options": [
         "QA Engineer",
         "Developer",
-        "Just Web3 user",
-        "Other"
+        "Just Web3 user"
       ],
+      "multiple": true,
       "freeOption": true
     },
     {
@@ -36,7 +37,7 @@
       "title": "Feel free to tell us about you, your hobbies and your experience in IT and Web3",
       "type": "text",
       "required": true,
-      "lines": 3
+      "multiline": true
     },
     {
       "key": "Country",
@@ -48,7 +49,8 @@
     {
       "key": "Bug bounty experience",
       "title": "Have you ever worked with any bug bounty systems? If yes, could you please name them?",
-      "type": "text"
+      "type": "text",
+      "multiline": true
     }
   ]
 }

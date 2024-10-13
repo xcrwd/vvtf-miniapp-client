@@ -8,7 +8,7 @@
       "title": "How do you like the hackathon?",
       "type": "text",
       "placeholder": "Your feedback",
-      "lines": 3
+      "multiline": true
     },
     {
       "key": "Rating",
@@ -18,7 +18,7 @@
       "options": [
         "Great",
         "Fine",
-        "Not good"
+        "Could be better"
       ]
     }
   ]

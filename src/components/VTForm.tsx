@@ -61,31 +61,27 @@ export function VTForm({ appId }: VTFormProps) {
       <Section>
         <List className="p-4">
           {data.imageUrl && (
-            <div className="flex justify-center">
+            <div className="text-center">
               <img src={data.imageUrl} />
             </div>
           )}
           {data.title && (
-            <div className="font-tg-sans font-semibold text-xl">
-              {data.title}
-            </div>
+            <div className="text-xl font-semibold">{data.title}</div>
           )}
           {data.subtitle && (
-            <div className="font-tg-sans text-tg-subtitle whitespace-pre-line">
+            <div className="text-tg-subtitle whitespace-pre-line">
               {data.subtitle}
             </div>
           )}
         </List>
       </Section>
-      <Section>
-        <Form instance={form}>
-          <List className="p-6">
-            {data.form.map((field) => (
-              <VTField key={field.key} field={field} />
-            ))}
-          </List>
-        </Form>
-      </Section>
+      <Form instance={form}>
+        {data.form.map((field) => (
+          <Section key={field.key}>
+            <VTField field={field} />
+          </Section>
+        ))}
+      </Form>
       <section className="m-4">
         <Button
           size="l"

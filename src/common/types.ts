@@ -18,7 +18,7 @@ export type Template = {
 export type TemplateField = TextField | OptionField;
 
 export type TextField = BaseTemplateField<"text"> & {
-  lines?: number;
+  multiline?: boolean;
 };
 
 export type SingleOptionField = BaseTemplateField<"option"> & {
@@ -31,13 +31,13 @@ export type MultiOptionField = BaseTemplateField<"option", string[]> & {
 
 export type OptionField = (SingleOptionField | MultiOptionField) & {
   options: string[];
-  freeOption?: boolean;
+  freeOption?: boolean | string;
 };
 
 export type BaseTemplateField<T extends string, V = string> = {
   type: T;
   key: string;
-  title?: string;
+  title: string;
   subtitle?: string;
   required?: boolean;
   placeholder?: string;

@@ -8,8 +8,10 @@ export function FieldOption({ field }: FieldProps<OptionField>) {
     <FormItem field={field}>
       {(input) => (
         <InputOption
+          placeholder={field.placeholder || "Your option"}
           multiple={field.multiple}
           options={field.options}
+          freeOption={field.freeOption}
           value={input.value}
           onChange={input.onChange}
           valid={input.valid}

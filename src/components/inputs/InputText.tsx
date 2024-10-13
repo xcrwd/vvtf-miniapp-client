@@ -1,16 +1,18 @@
 import { ChangeEvent, useCallback } from "react";
 
 import type { InputProps } from "../../common/types";
-import { Input } from "@telegram-apps/telegram-ui";
+import { Input, Textarea } from "@telegram-apps/telegram-ui";
 
 type InputTextProps = InputProps<string> & {
   header?: string;
   placeholder?: string;
+  multiline?: boolean;
 };
 
 export function InputText({
   header,
   placeholder,
+  multiline,
   valid,
   value,
   onChange,
@@ -20,8 +22,10 @@ export function InputText({
     [onChange],
   );
 
+  const Ctrl = multiline ? Textarea : Input;
+
   return (
-    <Input
+    <Ctrl
       status={valid ? undefined : "error"}
       header={header}
       placeholder={placeholder}

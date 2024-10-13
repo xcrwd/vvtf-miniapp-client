@@ -8,6 +8,9 @@ export function FieldText({ field }: FieldProps<TextField>) {
     <FormItem field={field}>
       {(input) => (
         <InputText
+          header={field.key}
+          placeholder={field.placeholder || "Your answer"}
+          multiline={field.multiline}
           value={input.value}
           onChange={input.onChange}
           valid={input.valid}
