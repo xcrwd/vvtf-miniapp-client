@@ -56,6 +56,8 @@ export function VTForm({ appId }: VTFormProps) {
 
   const isValid = validateForm(form.values, data.form);
 
+  const username = WebApp.initDataUnsafe.user?.username;
+
   return (
     <List>
       <Section>
@@ -75,6 +77,11 @@ export function VTForm({ appId }: VTFormProps) {
           )}
         </List>
       </Section>
+      {username && (
+        <section className="px-4 py-2 text-center font-semibold">
+          Hello {username}!
+        </section>
+      )}
       <Form instance={form}>
         {data.form.map((field) => (
           <Section key={field.key}>
