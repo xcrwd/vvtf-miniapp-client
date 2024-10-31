@@ -47,7 +47,7 @@ export function VTForm({ appId }: VTFormProps) {
           <img className="mb-5" src="success.svg" alt="Success" />
           <div className="mb-1 text-xl font-semibold">Congratulations!</div>
           <div className="text-tg-subtitle">
-            Your request was sent successfully!
+            Your request was sent, our team will contact you!
           </div>
         </div>
       </Section>
