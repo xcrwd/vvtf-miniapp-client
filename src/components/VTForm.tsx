@@ -43,13 +43,13 @@ export function VTForm({ appId }: VTFormProps) {
   if (done) {
     return (
       <Section>
-        <List className="p-4 text-center">
-          <img src="success.png" />
-          <div className="text-xl font-semibold">Congratulations!</div>
+        <div className="px-8 py-20 text-center">
+          <img className="mb-5" src="success.svg" alt="Success" />
+          <div className="mb-1 text-xl font-semibold">Congratulations!</div>
           <div className="text-tg-subtitle">
             Your request was sent successfully!
           </div>
-        </List>
+        </div>
       </Section>
     );
   }
