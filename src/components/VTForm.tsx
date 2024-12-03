@@ -77,11 +77,11 @@ export function VTForm({ appId }: VTFormProps) {
           )}
         </List>
       </Section>
-      {/* {username && (
+      {username && (
         <section className="px-4 py-2 text-center font-semibold">
-          Hello {username}!
+          {/* Hello {username}! */}
         </section>
-      )} */}
+      )}
       <Form instance={form}>
         {data.form.map((field) => (
           <Section key={field.key}>
