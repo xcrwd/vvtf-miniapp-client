@@ -1,25 +1,103 @@
 {
   "id": "bootcamp",
-  "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/bootcamp.png",
+  "title": "Apply for TON Beta and Crowd Testing",
+  "subtitle": "Thank you for your interest in TON Crowd Testing! Complete the form below to apply and join our community of testers contributing to the TON ecosystem.",
+  "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/ton_symbol.png",
   "apiUrl": "https://hardy-tops-arachnid.ngrok-free.app",
   "form": [
     {
-      "key": "Feedback",
-      "title": "How do you like the hackathon?",
+      "key": "Nickname",
+      "title": "Your nickname",
       "type": "text",
-      "placeholder": "Your feedback",
-      "multiline": true
+      "required": true
     },
     {
-      "key": "Rating",
-      "title": "Your rating",
+      "key": "TON wallet",
+      "title": "TON wallet address",
+      "subtitle": "To connect to our platform, please provide your ETONthereum wallet address. We use TON Connect (ton_proof) for authentication. If you don’t have a wallet yet, we recommend creating one using the Tonkeeper extension or Tonkeeper mobile app.",
+      "type": "text",
+      "required": true,
+      "placeholder": "UQAR....vbGC"
+    },
+    {
+      "key": "Specialization",
+      "title": "Your specialization",
       "type": "option",
       "required": true,
       "options": [
-        "Waimeeee pushka!",
-        "Fine",
-        "Could be better"
+        "QA Engineer",
+        "Developer",
+        "Just Web3 user"
+      ],
+      "multiple": true,
+      "freeOption": true
+    },
+    {
+      "key": "Experience",
+      "title": "Overall Experience Level",
+      "type": "option",
+      "required": true,
+      "options": [
+        "I have no experience in testing.",
+        "I have basic knowledge of testing.",
+        "I have experience participating in real-world projects.",
+        "I am a professional tester."
       ]
+    },
+    {
+      "key": "Knowledge",
+      "title": "Knowledge Level in Web3",
+      "type": "option",
+      "required": true,
+      "options": [
+        "Beginner",
+        "Confident user.",
+        "Expert"
+      ]
+    },
+    {
+      "key": "Availability",
+      "title": "Weekly Availability for Testing",
+      "type": "option",
+      "required": true,
+      "options": [
+        "Less than 5 hours",
+        "5–10 hours",
+        "More than 10 hours"
+      ]
+    },
+    {
+      "key": "Device",
+      "title": "Devices for Testing",
+      "type": "option",
+      "required": true,
+      "options": [
+        "Android",
+        "iOS",
+        "Desktop"
+      ],
+      "multiple": true,
+      "freeOption": true
+    },
+    {
+      "key": "Testing types",
+      "title": "What types of testing are you familiar with? ",
+      "type": "option",
+      "required": true,
+      "options": [
+        "Functional testing",
+        "UI/UX testing",
+        "Performance testing",
+        "Security testing"
+      ],
+      "multiple": true,
+      "freeOption": true
+    },
+    {
+      "key": "Bug bounty experience",
+      "title": "Have you ever worked with any bug bounty systems? If yes, could you please name them?",
+      "type": "text",
+      "multiline": true
     }
   ]
 }
