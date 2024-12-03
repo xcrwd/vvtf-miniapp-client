@@ -47,7 +47,7 @@ export function VTForm({ appId }: VTFormProps) {
           <img className="mb-5" src="success.svg" alt="Success" />
           <div className="mb-1 text-xl font-semibold">Congratulations!</div>
           <div className="text-tg-subtitle">
-            Your request was sent, our team will contact you!
+            Your request was sent, team will contact you!
           </div>
         </div>
       </Section>
@@ -96,7 +96,7 @@ export function VTForm({ appId }: VTFormProps) {
           disabled={!isValid}
           onClick={() => tonConnectUI.openModal()}
         >
-          TON Connect
+          Connect wallet
         </Button>
       </section>
     </List>
