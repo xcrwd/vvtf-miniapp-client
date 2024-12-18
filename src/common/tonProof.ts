@@ -9,11 +9,13 @@ export async function checkProof(
   form: KeyValue,
   reply: TonProofItemReplySuccess,
   account: Account,
+  appId: string,
   apiUrl?: string,
 ) {
   const url = `${apiUrl || env.API_URL}/api/form`;
 
   const payload = {
+    appId,
     form,
     tonproof: reply.proof,
     account: {

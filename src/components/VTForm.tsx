@@ -26,7 +26,7 @@ export function VTForm({ appId }: VTFormProps) {
 
   const form = useForm();
 
-  const done = useTonProof(form.values, data?.apiUrl);
+  const done = useTonProof(form.values, appId, data?.apiUrl);
 
   WebApp.MainButton.isVisible = done;
 

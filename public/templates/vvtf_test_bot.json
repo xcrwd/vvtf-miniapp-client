@@ -1,9 +1,8 @@
 {
   "id": "vvtf_test_bot",
-  "title": "Early-birds apply to xcrwd.io ",
-  "subtitle": "We're thrilled by your interest in xcrwd.io platform. Kindly complete this form to furnish us with details about you.\n\nStay tuned!",
+  "title": "Test form",
   "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/xcrwd.png",
-  "apiUrl": "https://suited-arachnid-terminally.ngrok-free.app",
+  "apiUrl": "https://vvtf-xcrwd-admin.fly.dev",
   "form": [
     {
       "key": "Nickname",
@@ -12,45 +11,13 @@
       "required": true
     },
     {
-      "key": "Ethereum wallet",
-      "title": "Ethereum wallet address",
-      "subtitle": "To connect to our platform, please provide your Ethereum wallet address. We use Sign-In with Ethereum (SIWE, ERC-4361) for authentication. If you don’t have a wallet yet, we recommend creating one using the MetaMask extension or the 1inch mobile wallet.",
-      "type": "text",
-      "required": true,
-      "placeholder": "0xb794f5ea0ba39494ce839613fffba74279579268"
-    },
-    {
       "key": "Specialization",
       "title": "Your specialization",
       "type": "option",
       "required": true,
-      "options": [
-        "QA Engineer",
-        "Developer",
-        "Just Web3 user"
-      ],
+      "options": ["QA Engineer", "Developer", "Just Web3 user"],
       "multiple": true,
       "freeOption": true
-    },
-    {
-      "key": "Experience",
-      "title": "Feel free to tell us about you, your hobbies and your experience in IT and Web3",
-      "type": "text",
-      "required": true,
-      "multiline": true
-    },
-    {
-      "key": "Country",
-      "title": "Where are you from?",
-      "subtitle": "Please provide your country. This information helps us understand the global distribution of our users.",
-      "type": "text",
-      "required": true
-    },
-    {
-      "key": "Bug bounty experience",
-      "title": "Have you ever worked with any bug bounty systems? If yes, could you please name them?",
-      "type": "text",
-      "multiline": true
     }
   ]
 }
