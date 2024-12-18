@@ -3,7 +3,8 @@
   "title": "Early-birds apply to xcrwd.io ",
   "subtitle": "We're thrilled by your interest in xcrwd.io platform. Kindly complete this form to furnish us with details about you.\n\nStay tuned!",
   "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/xcrwd.png",
-  "apiUrl": "https://suited-arachnid-terminally.ngrok-free.app",
+  "fallback_apiUrl": "https://suited-arachnid-terminally.ngrok-free.app",
+  "apiUrl": "https://vvtf-xcrwd-admin.fly.dev",
   "form": [
     {
       "key": "Nickname",
@@ -24,11 +25,7 @@
       "title": "Your specialization",
       "type": "option",
       "required": true,
-      "options": [
-        "QA Engineer",
-        "Developer",
-        "Just Web3 user"
-      ],
+      "options": ["QA Engineer", "Developer", "Just Web3 user"],
       "multiple": true,
       "freeOption": true
     },

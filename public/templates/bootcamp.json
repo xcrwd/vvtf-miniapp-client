@@ -3,7 +3,8 @@
   "title": "Apply for TON Beta and Crowd Testing",
   "subtitle": "Thank you for your interest in TON Crowd Testing! Complete the form below to apply and join our community of testers contributing to the TON ecosystem.",
   "imageUrl": "https://xcrwd.github.io/vvtf-miniapp-client/ton_symbol.png",
-  "apiUrl": "https://hardy-tops-arachnid.ngrok-free.app",
+  "fallback_apiUrl": "https://hardy-tops-arachnid.ngrok-free.app",
+  "apiUrl": "https://vvtf-xcrwd-admin.fly.dev",
   "form": [
     {
       "key": "Nickname",
